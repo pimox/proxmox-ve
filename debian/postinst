@@ -24,8 +24,8 @@ case "$1" in
 
     # setup kernel links for installation CD (rescue boot)
     mkdir -p /boot/pve
-    ln -sf /boot/vmlinuz-@KVNAME@ /boot/pve/vmlinuz
-    ln -sf /boot/initrd.img-@KVNAME@ /boot/pve/initrd.img
+    ln -sf /boot/pve/vmlinuz-4.13 /boot/pve/vmlinuz
+    ln -sf /boot/pve/initrd.img-4.13 /boot/pve/initrd.img
     
     # There are three sub-cases:
     if test "${2+set}" != set; then
