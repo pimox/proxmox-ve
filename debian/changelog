@@ -1,3 +1,17 @@
+proxmox-ve (5.1-42) unstable; urgency=medium
+
+  * split out proxmox-ve into own source package and git repository
+
+  * make repository key a proper conffile
+
+  * split out kernel meta packages into own packages and git repository
+
+  * depend on new kernel meta package instead of kernel package directly
+
+  * move dependency on pve-firmware into pve-kernel-4.13 (meta) package
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 5 Mar 2018 14:34:11 +0100
+
 proxmox-ve (5.1-39) unstable; urgency=medium
 
   * depend on newest 4.13.13-6-pve kernel
