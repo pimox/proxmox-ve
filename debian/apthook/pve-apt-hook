@@ -1,0 +1,73 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use File::Basename;
+
+my $fd = $ENV{APT_HOOK_INFO_FD};
+my $check_file = '/please-remove-proxmox-ve';
+my $check_package = 'proxmox-ve';
+my $hook_name = basename($0);
+
+my $log = sub {
+  my ($line) = @_;
+  print "W: ($hook_name) $line";
+};
+
+if (!defined $fd || $fd == 0) {
+  $log->("APT_HOOK_INFO_FD not correctly defined, skipping apt-pve-hook checks\n");
+  exit 0;
+}
+
+open(my $fh, "<&=${fd}") or die "E: could not open APT_HOOK_INFO_FD (${fd}) - $!\n";
+
+my $cleanup = sub {
+  my ($rc) = @_;
+
+  close($fh);
+  exit $rc;
+};
+
+chomp (my $ver = <$fh>);
+if ($ver ne "VERSION 2") {
+  $log->("apt-pve-hook misconfigured, expecting hook protocol version 2\n");
+  $cleanup->(0);
+}
+
+my $blank;
+while (my $line = <$fh>) {
+  chomp $line;
+
+  if (!defined($blank)) {
+    $blank = 1 if !$line;
+    next;
+  }
+
+  my ($pkg, $old, $dir, $new, $action) = (split / /, $line, 5);
+  if (!defined($action)) {
+    $log->("apt-pve-hook encountered unexpected line: $line\n");
+    next;
+  }
+
+  if ($pkg eq 'proxmox-ve' && $action eq '**REMOVE**') {
+    if (-e $check_file) {
+      $log->("'$check_file' exists, proceeding with removal of package '${check_package}'\n");
+      unlink $check_file;
+    } else {
+      $log->("!! WARNING !!\n");
+      $log->("You are attempting to remove the meta-package '${check_package}'!\n");
+      $log->("\n");
+      $log->("If you really you want to permanently remove '${check_package}' from your system, run the following command\n");
+      $log->("\ttouch '${check_file}'\n");
+      $log->("and repeat your apt-get/apt invocation.\n");
+      $log->("\n");
+      $log->("If you are unsure why '$check_package' would be removed, please verify\n");
+      $log->("\t- your APT repository settings\n");
+      $log->("\t- that you are using 'apt-get dist-upgrade' or 'apt full-upgrade' to upgrade your system\n");
+      $cleanup->(1);
+    }
+  }
+}
+
+$cleanup->(0);

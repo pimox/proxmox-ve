@@ -1,0 +1,4 @@
+DPkg::Pre-Install-Pkgs { "/usr/share/proxmox-ve/pve-apt-hook"; };
+DPkg::Tools::Options::/usr/share/proxmox-ve/pve-apt-hook "";
+DPkg::Tools::Options::/usr/share/proxmox-ve/pve-apt-hook::Version "2";
+DPkg::Tools::Options::/usr/share/proxmox-ve/pve-apt-hook::InfoFD "20";
