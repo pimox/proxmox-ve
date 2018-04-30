@@ -1,3 +1,13 @@
+proxmox-ve (5.1-43) unstable; urgency=medium
+
+  * switch to 4.15 series
+
+  * build pve-headers meta-package from proxmox-ve
+
+  * add apt hook to prevent accidental removal of proxmox-ve package
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 30 Apr 2018 10:54:21 +0200
+
 proxmox-ve (5.1-42) unstable; urgency=medium
 
   * split out proxmox-ve into own source package and git repository
