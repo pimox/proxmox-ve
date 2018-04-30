@@ -5,14 +5,16 @@ PKGREL=42
 GITVERSION:=$(shell git rev-parse HEAD)
 
 PVE_DEB=${PACKAGE}_${RELEASE}-${PKGREL}_all.deb
+PVE_HEADERS_DEB=pve-headers_${RELEASE}-${PKGREL}_all.deb
 
 BUILD_DIR=build
 
-DEBS=${PVE_DEB}
+DEBS=${PVE_DEB} ${PVE_HEADERS_DEB}
 
 all: deb
 deb: ${DEBS}
 
+${PVE_HEADERS_DEB}: ${PVE_DEB}
 ${PVE_DEB}: debian
 	rm -rf ${BUILD_DIR}
 	mkdir -p ${BUILD_DIR}/debian

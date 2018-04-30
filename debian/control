@@ -29,3 +29,9 @@ Description: The Proxmox Virtual Environment
  virtualization platform for running Virtual Appliances and Virtual
  Machines. This is a meta package which will install everything
  needed.
+
+Package: pve-headers
+Architecture: all
+Depends: pve-headers-4.15,
+Description: Default Proxmox VE Kernel Headers
+ This is a virtual package which will install the kernel headers for the current default kernel.
