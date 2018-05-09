@@ -1,6 +1,6 @@
-RELEASE=5.1
+RELEASE=5.2
 PACKAGE=proxmox-ve
-PKGREL=43
+PKGREL=1
 
 GITVERSION:=$(shell git rev-parse HEAD)
 
