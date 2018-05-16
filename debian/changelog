@@ -1,3 +1,10 @@
+proxmox-ve (5.2-2) unstable; urgency=medium
+
+  * switch over /boot/pve/vmlinuz and /boot/pve/initrd symlinks to point to
+    4.15 series
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 16 May 2018 07:59:41 +0200
+
 proxmox-ve (5.2-1) unstable; urgency=medium
 
   * bump version  for PVE 5.2
