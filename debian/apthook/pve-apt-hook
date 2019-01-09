@@ -60,11 +60,11 @@ while (my $line = <$fh>) {
       $log->("\n");
       $log->("If you really you want to permanently remove '${check_package}' from your system, run the following command\n");
       $log->("\ttouch '${check_file}'\n");
-      $log->("and repeat your apt-get/apt invocation.\n");
+      $log->("and repeat your apt invocation.\n");
       $log->("\n");
       $log->("If you are unsure why '$check_package' would be removed, please verify\n");
       $log->("\t- your APT repository settings\n");
-      $log->("\t- that you are using 'apt-get dist-upgrade' or 'apt full-upgrade' to upgrade your system\n");
+      $log->("\t- that you are using 'apt full-upgrade' to upgrade your system\n");
       $cleanup->(1);
     }
   }
