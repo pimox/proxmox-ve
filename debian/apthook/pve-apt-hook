@@ -58,7 +58,7 @@ while (my $line = <$fh>) {
       $log->("!! WARNING !!\n");
       $log->("You are attempting to remove the meta-package '${check_package}'!\n");
       $log->("\n");
-      $log->("If you really you want to permanently remove '${check_package}' from your system, run the following command\n");
+      $log->("If you really want to permanently remove '${check_package}' from your system, run the following command\n");
       $log->("\ttouch '${check_file}'\n");
       $log->("run apt purge ${check_package} to remove the meta-package\n");
       $log->("and repeat your apt invocation.\n");
