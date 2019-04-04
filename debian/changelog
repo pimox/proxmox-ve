@@ -1,3 +1,9 @@
+proxmox-ve (5.4-1) unstable; urgency=medium
+
+  * bump version for PVE 5.4
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 04 Apr 2019 17:40:03 +0200
+
 proxmox-ve (5.3-1) unstable; urgency=medium
 
   * bump version for PVE 5.3

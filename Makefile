@@ -1,4 +1,4 @@
-RELEASE=5.3
+RELEASE=5.4
 PACKAGE=proxmox-ve
 PKGREL=1
 
