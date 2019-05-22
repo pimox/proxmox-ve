@@ -13,8 +13,8 @@ case "$1" in
 
     # setup kernel links for installation CD (rescue boot)
     mkdir -p /boot/pve
-    ln -sf /boot/pve/vmlinuz-4.15 /boot/pve/vmlinuz
-    ln -sf /boot/pve/initrd.img-4.15 /boot/pve/initrd.img
+    ln -sf /boot/pve/vmlinuz-5.0 /boot/pve/vmlinuz
+    ln -sf /boot/pve/initrd.img-5.0 /boot/pve/initrd.img
     ;;
 esac
 
