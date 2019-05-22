@@ -1,3 +1,12 @@
+proxmox-ve (6.0-0+1) pve; urgency=medium
+
+  * switch over /boot/pve/vmlinuz and /boot/pve/initrd symlinks to point to
+    5.0 kernel version series
+
+  * re build for Debian Buster / PVE 6
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 22 May 2019 21:45:24 +0200
+
 proxmox-ve (5.4-1) unstable; urgency=medium
 
   * bump version for PVE 5.4
