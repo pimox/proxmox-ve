@@ -1,11 +1,11 @@
-RELEASE=5.4
+include /usr/share/dpkg/pkg-info.mk
+
 PACKAGE=proxmox-ve
-PKGREL=1
 
 GITVERSION:=$(shell git rev-parse HEAD)
 
-PVE_DEB=${PACKAGE}_${RELEASE}-${PKGREL}_all.deb
-PVE_HEADERS_DEB=pve-headers_${RELEASE}-${PKGREL}_all.deb
+PVE_DEB=${PACKAGE}_${DEB_VERSION_UPSTREAM_REVISION}_all.deb
+PVE_HEADERS_DEB=pve-headers_${DEB_VERSION_UPSTREAM_REVISION}_all.deb
 
 BUILD_DIR=build
 
