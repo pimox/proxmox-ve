@@ -25,7 +25,7 @@ ${PVE_DEB}: debian
 
 .PHONY: upload
 upload: ${DEBS}
-	tar cf - ${DEBS}|ssh repoman@repo.proxmox.com -- upload --product pve --dist stretch --arch ${ARCH}
+	tar cf - ${DEBS}|ssh repoman@repo.proxmox.com -- upload --product pve --dist buster --arch ${ARCH}
 
 .PHONY: distclean
 distclean: clean
