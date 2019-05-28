@@ -1,3 +1,9 @@
+proxmox-ve (6.0-0+2) pve; urgency=medium
+
+  * make pve-headers depend on pve-headers-5.0
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 28 May 2019 11:49:14 +0200
+
 proxmox-ve (6.0-0+1) pve; urgency=medium
 
   * switch over /boot/pve/vmlinuz and /boot/pve/initrd symlinks to point to
