@@ -23,9 +23,12 @@ if (!defined $fd || $fd == 0) {
 open(my $fh, "<&=${fd}") or die "E: could not open APT_HOOK_INFO_FD (${fd}) - $!\n";
 
 my $cleanup = sub {
-  my ($rc) = @_;
+  my ($rc, $confirm) = @_;
 
   close($fh);
+
+  my $line = <STDIN> if $confirm;
+
   exit $rc;
 };
 
@@ -50,23 +53,33 @@ while (my $line = <$fh>) {
     next;
   }
 
-  if ($pkg eq 'proxmox-ve' && $action eq '**REMOVE**') {
-    if (-e $check_file) {
-      $log->("'$check_file' exists, proceeding with removal of package '${check_package}'\n");
-      unlink $check_file;
-    } else {
-      $log->("!! WARNING !!\n");
-      $log->("You are attempting to remove the meta-package '${check_package}'!\n");
+  if ($pkg eq 'proxmox-ve') {
+    if ($action eq '**REMOVE**') {
+      if (-e $check_file) {
+        $log->("'$check_file' exists, proceeding with removal of package '${check_package}'\n");
+        unlink $check_file;
+      } else {
+        $log->("!! WARNING !!\n");
+        $log->("You are attempting to remove the meta-package '${check_package}'!\n");
+        $log->("\n");
+        $log->("If you really want to permanently remove '${check_package}' from your system, run the following command\n");
+        $log->("\ttouch '${check_file}'\n");
+        $log->("run apt purge ${check_package} to remove the meta-package\n");
+        $log->("and repeat your apt invocation.\n");
+        $log->("\n");
+        $log->("If you are unsure why '$check_package' would be removed, please verify\n");
+        $log->("\t- your APT repository settings\n");
+        $log->("\t- that you are using 'apt full-upgrade' to upgrade your system\n");
+        $cleanup->(1);
+      }
+    } elsif ($action eq '**CONFIGURE**' && $dir eq '<' && $old =~ /^6\./ && $new =~ /^7\./) {
+      $log->("!! ATTENTION !!\n");
+      $log->("You are attempting to upgrade from proxmox-ve '$old' to proxmox-ve '$new'. Please make sure to read the Upgrade notes at\n");
+      $log->("\thttps://pve.proxmox.com/wiki/Upgrade_from_6.x_to_7.0\n");
+      $log->("before proceeding with this operation.\n");
       $log->("\n");
-      $log->("If you really want to permanently remove '${check_package}' from your system, run the following command\n");
-      $log->("\ttouch '${check_file}'\n");
-      $log->("run apt purge ${check_package} to remove the meta-package\n");
-      $log->("and repeat your apt invocation.\n");
-      $log->("\n");
-      $log->("If you are unsure why '$check_package' would be removed, please verify\n");
-      $log->("\t- your APT repository settings\n");
-      $log->("\t- that you are using 'apt full-upgrade' to upgrade your system\n");
-      $cleanup->(1);
+      $log->("Press enter to continue, or C^c to abort.\n");
+      $cleanup->(0, 1);
     }
   }
 }
