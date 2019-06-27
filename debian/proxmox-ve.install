@@ -2,3 +2,6 @@ debian/apthook/10pveapthook etc/apt/apt.conf.d/
 debian/apthook/pve-apt-hook usr/share/proxmox-ve/
 debian/proxmox-ve-release-5.x.gpg etc/apt/trusted.gpg.d/
 debian/proxmox-ve-release-6.x.gpg etc/apt/trusted.gpg.d/
+debian/efiboot/functions usr/share/proxmox-ve/scripts/
+debian/efiboot/pve-auto-removal etc/kernel/postinst.d/
+debian/efiboot/zz-pve-efiboot etc/kernel/postinst.d/
