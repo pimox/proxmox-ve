@@ -56,4 +56,3 @@ boot_kernel_list() {
 warn() {
 	echo "$@" 1>&2
 }
-

@@ -154,4 +154,3 @@ case $0:$mode in
 esac
 
 exit 0
-
