@@ -1,3 +1,9 @@
+proxmox-ve (6.0-1) pve; urgency=medium
+
+  * add efiboot and kernel autoremoval postinst hooks
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 28 Jun 2019 11:25:40 +0200
+
 proxmox-ve (6.0-0+2) pve; urgency=medium
 
   * make pve-headers depend on pve-headers-5.0
