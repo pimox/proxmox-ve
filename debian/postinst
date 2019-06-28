@@ -5,12 +5,6 @@ set -e
 
 case "$1" in
   configure)
-    # cleanup - remove Proxmox Release Key key from /etc/apt/trusted.gpg
-    /usr/bin/apt-key --keyring /etc/apt/trusted.gpg del 9887F95A >/dev/null 2>&1 || /bin/true
-
-    # cleanup - remove old stretch-incompatible variant of installing release key
-    rm -f /etc/apt/trusted.gpg.d/proxmox-ve.gpg /etc/apt/trusted.gpg.d/proxmox-ve.gpg~
-
     # setup kernel links for installation CD (rescue boot)
     mkdir -p /boot/pve
     ln -sf /boot/pve/vmlinuz-5.0 /boot/pve/vmlinuz
