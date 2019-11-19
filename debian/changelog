@@ -1,3 +1,11 @@
+proxmox-ve (6.1-1) pve; urgency=medium
+
+  * depend on Linux Kernel 5.3 by default
+
+  * make pve-headers depend on pve-headers-5.3
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 26 Nov 2019 07:48:12 +0100
+
 proxmox-ve (6.0-2) pve; urgency=medium
 
   * move efiboot and kernel autoremoval postinst hooks to kernel-meta
