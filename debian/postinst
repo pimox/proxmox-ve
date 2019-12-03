@@ -7,8 +7,8 @@ case "$1" in
   configure)
     # setup kernel links for installation CD (rescue boot)
     mkdir -p /boot/pve
-    ln -sf /boot/pve/vmlinuz-5.0 /boot/pve/vmlinuz
-    ln -sf /boot/pve/initrd.img-5.0 /boot/pve/initrd.img
+    ln -sf /boot/pve/vmlinuz-5.3 /boot/pve/vmlinuz
+    ln -sf /boot/pve/initrd.img-5.3 /boot/pve/initrd.img
     ;;
 esac
 
