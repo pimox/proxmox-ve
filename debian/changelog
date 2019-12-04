@@ -1,3 +1,9 @@
+proxmox-ve (6.1-2) pve; urgency=medium
+
+  * ensure rescue kernel links point over to new 5.3 kernel
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 04 Dec 2019 07:09:33 +0100
+
 proxmox-ve (6.1-1) pve; urgency=medium
 
   * depend on Linux Kernel 5.3 by default
