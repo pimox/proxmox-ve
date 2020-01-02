@@ -34,4 +34,5 @@ Package: pve-headers
 Architecture: all
 Depends: pve-headers-5.3,
 Description: Default Proxmox VE Kernel Headers
- This is a virtual package which will install the kernel headers for the current default kernel.
+ This is a metapackage which will install the kernel headers for the
+ current default kernel.
