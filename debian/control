@@ -24,7 +24,7 @@ Depends: apt,
          qemu-server,
          spiceterm,
          vncterm,
-Description: The Proxmox Virtual Environment
+Description: Proxmox Virtual Environment
  The Proxmox Virtual Environment is an easy to use Open Source
  virtualization platform for running Virtual Appliances and Virtual
  Machines. This is a meta package which will install everything
