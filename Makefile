@@ -21,7 +21,7 @@ ${PVE_DEB}: debian
 	cp -ar debian/* ${BUILD_DIR}/debian/
 	echo "git clone git://git.proxmox.com/git/proxmox-ve.git\\ngit checkout ${GITVERSION}" > ${BUILD_DIR}/debian/SOURCE
 	cd ${BUILD_DIR}; dpkg-buildpackage -b -uc -us
-	lintian ${PVE_DEB}
+	lintian ${DEBS}
 
 .PHONY: upload
 upload: ${DEBS}
