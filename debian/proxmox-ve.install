@@ -1,4 +1,2 @@
 debian/apthook/10pveapthook etc/apt/apt.conf.d/
 debian/apthook/pve-apt-hook usr/share/proxmox-ve/
-debian/proxmox-ve-release-5.x.gpg etc/apt/trusted.gpg.d/
-debian/proxmox-ve-release-6.x.gpg etc/apt/trusted.gpg.d/

@@ -1,0 +1,3 @@
+# moved to proxmox-archive-keyring under more generic paths
+rm_conffile /etc/apt/trusted.gpg.d/proxmox-ve-release-5.x.gpg 6.2-2~~
+rm_conffile /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg 6.2-2~~

@@ -1,1 +1,0 @@
-proxmox-ve: package-installs-apt-keyring etc/apt/trusted.gpg.d/proxmox-ve-release-*
