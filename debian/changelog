@@ -1,3 +1,9 @@
+proxmox-ve (6.3-1) pve; urgency=medium
+
+  * bump version for Proxmox VE 6.3
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 25 Nov 2020 11:47:22 +0100
+
 proxmox-ve (6.2-2) pve; urgency=medium
 
   * split out APT repository keys into own package 'proxmox-archive-keyring'
