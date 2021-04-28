@@ -1,3 +1,9 @@
+proxmox-ve (6.4-1) pve; urgency=medium
+
+  * bump version for Proxmox VE 6.4
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 28 Apr 2021 10:29:10 +0200
+
 proxmox-ve (6.3-1) pve; urgency=medium
 
   * bump version for Proxmox VE 6.3
