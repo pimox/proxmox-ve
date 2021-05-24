@@ -1,3 +1,11 @@
+proxmox-ve (7.0-1) bullseye; urgency=medium
+
+  * depend on Linux Kernel 5.11 by default
+
+  * re-build for Proxmox VE 7 / Debian Bullseye
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 24 May 2021 12:18:54 +0200
+
 proxmox-ve (6.4-1) pve; urgency=medium
 
   * bump version for Proxmox VE 6.4
