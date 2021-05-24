@@ -15,7 +15,7 @@ Depends: apt,
          openssh-client,
          openssh-server,
          proxmox-archive-keyring,
-         pve-kernel-5.4,
+         pve-kernel-5.11,
          pve-kernel-helper,
          pve-manager,
          pve-qemu-kvm,
@@ -30,7 +30,7 @@ Description: Proxmox Virtual Environment
 
 Package: pve-headers
 Architecture: all
-Depends: pve-headers-5.4,
+Depends: pve-headers-5.11
 Description: Default Proxmox VE Kernel Headers
  This is a metapackage which will install the kernel headers for the
  current default kernel.
