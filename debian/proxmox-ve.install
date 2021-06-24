@@ -1,2 +1,3 @@
 debian/apthook/10pveapthook etc/apt/apt.conf.d/
 debian/apthook/pve-apt-hook usr/share/proxmox-ve/
+debian/grub/proxmox-ve.cfg etc/default/grub.d/
