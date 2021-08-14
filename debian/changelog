@@ -1,3 +1,23 @@
+proxmox-ve (7.0-2) bullseye; urgency=medium
+
+  * add grub.d snippet  set distributor and disable os-prober
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 24 Jun 2021 13:53:40 +0200
+
+proxmox-ve (7.0-1) bullseye; urgency=medium
+
+  * depend on Linux Kernel 5.11 by default
+
+  * re-build for Proxmox VE 7 / Debian Bullseye
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 24 May 2021 12:18:54 +0200
+
+proxmox-ve (6.4-1) pve; urgency=medium
+
+  * bump version for Proxmox VE 6.4
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 28 Apr 2021 10:29:10 +0200
+
 proxmox-ve (6.3-1rpve1) pve; urgency=medium
 
   * No kernel

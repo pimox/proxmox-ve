@@ -1,19 +1,16 @@
 Source: proxmox-ve
 Section: admin
 Priority: optional
-Build-Depends: debhelper (>=10~),
-               lintian,
 Maintainer: Proxmox Support Team <support@proxmox.com>
+Build-Depends: debhelper (>=12~), lintian
+Standards-Version: 4.5.1
+Homepage: https://www.proxmox.com
 
 Package: proxmox-ve
 Architecture: all
-Provides: proxmox-virtual-environment,
-Conflicts: proxmox-ve-3.10.0,
-           proxmox-virtual-environment,
-           pve-kernel,
-Replaces: proxmox-ve-3.10.0,
-          proxmox-virtual-environment,
-          pve-kernel,
+Provides: proxmox-virtual-environment
+Conflicts: proxmox-ve-3.10.0, proxmox-virtual-environment, pve-kernel
+Replaces: proxmox-ve-3.10.0, proxmox-virtual-environment, pve-kernel
 Depends: apt,
          openssh-client,
          openssh-server,
@@ -31,7 +28,7 @@ Description: Proxmox Virtual Environment
 
 Package: pve-headers
 Architecture: all
-Depends: pve-headers-5.4,
+Depends: pve-headers-5.11
 Description: Default Proxmox VE Kernel Headers
  This is a metapackage which will install the kernel headers for the
  current default kernel.
