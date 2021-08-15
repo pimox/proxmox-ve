@@ -20,6 +20,10 @@ Depends: apt,
          qemu-server,
          spiceterm,
          vncterm,
+	 zfsutils-linux,
+	 chrony,
+	 ksmtuned,
+	 ceph-dkms,
 Description: Proxmox Virtual Environment
  The Proxmox Virtual Environment is an easy to use Open Source
  virtualization platform for running Virtual Appliances and Virtual
